@@ -19,8 +19,6 @@ syn match logstashOperator "\v\<" contained
 syn match logstashOperator "\v\>" contained
 syn match logstashOperator "\v\>\=" contained
 syn match logstashOperator "\v\<\=" contained
-syn match logstashBraces   "\v\{" contained
-syn match logstashBraces   "\v\}" contained
 
 syn keyword logstashOperator in contained
 syn keyword logstashOperator not contained
@@ -34,7 +32,7 @@ syn keyword logstashBoolean false contained
 
 syn match logstashNumber '\v\d\+' contained
 
-syn region logstashBlock start=+{+ end=+}+ contains=logstashBlock,logstashComment,logstashPlugin,logstashVariableBlock,logstashString,logstashOperator,logstashBoolean,logstashNumber,logstashConditional,logstashBraces
+syn region logstashBlock start=+{+ end=+}+ contains=logstashBlock,logstashComment,logstashPlugin,logstashVariableBlock,logstashString,logstashOperator,logstashBoolean,logstashNumber,logstashConditional
 syn region logstashString start=+"+ end=+"+ skip=+\\\\\|\\"+ contains=logstashFormat
 syn region logstashString start=+'+ end=+'+ skip=+\\\\\|\\'+ contains=logstashFormat
 syn region logstashVariableBlock start=/\v\[/ skip=/\v\\./ end=/\v\]/ contains=logstashString
@@ -225,7 +223,6 @@ syn keyword logstashPlugin zeromq contained
 
 hi link logstashBlock Normal
 hi link logstashPlugin Function
-hi link logstashBraces Function
 hi link logstashSection Statement
 
 hi link logstashComment Comment
