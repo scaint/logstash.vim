@@ -32,7 +32,7 @@ syn keyword logstashBoolean false contained
 
 syn match logstashNumber '\v\d\+' contained
 
-syn region logstashBlock start=+{+ end=+}+ contains=logstashBlock,logstashComment,logstashPlugin,logstashVariableBlock,logstashString,logstashOperator,logstashBoolean,logstashNumber,logstashConditional
+syn region logstashBlock start=+{+ end=+}+ contains=logstashBlock,logstashComment,logstashPlugin,logstashVariableBlock,logstashString,logstashOperator,logstashBoolean,logstashNumber,logstashConditional fold
 syn region logstashString start=+"+ end=+"+ skip=+\\\\\|\\"+ contains=logstashFormat
 syn region logstashString start=+'+ end=+'+ skip=+\\\\\|\\'+ contains=logstashFormat
 syn region logstashVariableBlock start=/\v\[/ skip=/\v\\./ end=/\v\]/ contains=logstashString
